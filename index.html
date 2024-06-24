@@ -1,0 +1,44 @@
+import time
+import random
+
+class SensorDeUmidade:
+    def __init__(self, id_sensor):
+        self.id_sensor = id_sensor
+    
+    def ler_umidade(self):
+        # Simulando a leitura de umidade do solo
+        umidade = random.uniform(0, 100)
+        return umidade
+
+class SistemaDeIrrigacao:
+    def __init__(self, sensor, limiar_umidade):
+        self.sensor = sensor
+        self.limiar_umidade = limiar_umidade
+
+    def verificar_e_irrigar(self):
+        umidade_atual = self.sensor.ler_umidade()
+        print(f"Sensor {self.sensor.id_sensor}: Umidade atual do solo: {umidade_atual:.2f}%")
+        
+        if umidade_atual < self.limiar_umidade:
+            self.ativar_irrigacao()
+        else:
+            print("Solo com umidade suficiente. Irrigação não necessária.")
+    
+    def ativar_irrigacao(self):
+        print("Umidade baixa detectada. Ativando sistema de irrigação...")
+        # Aqui adicionamos o código para ativar o sistema de irrigação
+        time.sleep(2)
+        print("Sistema de irrigação ativado.")
+
+# Simulando o uso do sistema com um sensor
+sensor = SensorDeUmidade(id_sensor=1)
+sistema_irrigacao = SistemaDeIrrigacao(sensor=sensor, limiar_umidade=30)
+
+# Executando o sistema de verificação e irrigação em um loop
+try:
+    while True:
+        sistema_irrigacao.verificar_e_irrigar()
+        # Intervalo de tempo entre verificações (por exemplo, 10 segundos)
+        time.sleep(10)
+except KeyboardInterrupt:
+    print("Sistema de irrigação finalizado.")
