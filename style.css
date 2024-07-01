@@ -1,6 +1,6 @@
 body{
     color: rgb(0, 0, 0);
-    background-color: cornflowerblue;
+    background-color:#f0f0f0;
 }
 .titulo-principal{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -23,4 +23,32 @@ body{
 }
 .cadeado{
     width: 30%;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section{
+    background-color: #fff;
+    margin-bottom: 30px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section p{
+    color: #333;
+}
+
+header{
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1{
+    margin: 0;
+    font-size: 2em;
 }
